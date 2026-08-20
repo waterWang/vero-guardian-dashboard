@@ -5,7 +5,6 @@ import { useMemo } from "react";
 import type { TFunction } from "i18next";
 import {
   Activity,
-  ArrowRight,
   CheckCircle2,
   Code2,
   Shield,
@@ -36,6 +35,7 @@ import TaskCard from "@/components/TaskCard";
 import ThemeToggle from "@/components/ThemeToggle";
 import TransactionFeed from "@/components/TransactionFeed";
 import DashboardGrid from "@/components/dashboard/DashboardGrid";
+import QuickActions from "@/components/dashboard/QuickActions";
 import { AccessControl } from "@/components/Guard";
 import SessionTimer from "@/components/timer";
 import { useRole } from "@/context/RoleContext";
@@ -193,38 +193,7 @@ export default function Home(): ReactElement {
         component: (
           <div className="h-full flex flex-col justify-between">
             <div className="grid grid-cols-1 gap-3">
-              <button
-                className="w-full flex items-center justify-between px-4 py-3 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-white rounded-xl border border-slate-200 dark:border-slate-700 transition-colors group focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                aria-label={t("actions.networkStatus")}
-              >
-                <span className="font-medium">
-                  {t("actions.networkStatus")}
-                </span>
-                <ArrowRight
-                  className="w-4 h-4 text-slate-500 dark:text-slate-400 group-hover:text-slate-800 dark:group-hover:text-white transition-colors"
-                  aria-hidden="true"
-                />
-              </button>
-              <button
-                className="w-full flex items-center justify-between px-4 py-3 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-white rounded-xl border border-slate-200 dark:border-slate-700 transition-colors group focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                aria-label={t("actions.stake")}
-              >
-                <span className="font-medium">{t("actions.stake")}</span>
-                <ArrowRight
-                  className="w-4 h-4 text-slate-500 dark:text-slate-400 group-hover:text-slate-800 dark:group-hover:text-white transition-colors"
-                  aria-hidden="true"
-                />
-              </button>
-              <button
-                className="w-full flex items-center justify-between px-4 py-3 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-white rounded-xl border border-slate-200 dark:border-slate-700 transition-colors group focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                aria-label={t("actions.rewards")}
-              >
-                <span className="font-medium">{t("actions.rewards")}</span>
-                <ArrowRight
-                  className="w-4 h-4 text-slate-500 dark:text-slate-400 group-hover:text-slate-800 dark:group-hover:text-white transition-colors"
-                  aria-hidden="true"
-                />
-              </button>
+              <QuickActions />
             </div>
           </div>
         ),
